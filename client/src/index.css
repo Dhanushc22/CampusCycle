@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(0, 0%, 100%);
+  --foreground: hsl(222, 84%, 5%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(222, 84%, 5%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(222, 84%, 5%);
+  --primary: hsl(142, 76%, 36%);
+  --primary-foreground: hsl(355, 100%, 97%);
+  --secondary: hsl(139, 40%, 89%);
+  --secondary-foreground: hsl(222, 47%, 11%);
+  --muted: hsl(210, 40%, 96%);
+  --muted-foreground: hsl(215, 16%, 47%);
+  --accent: hsl(158, 64%, 52%);
+  --accent-foreground: hsl(355, 100%, 97%);
+  --destructive: hsl(0, 84%, 60%);
+  --destructive-foreground: hsl(355, 100%, 97%);
+  --border: hsl(214, 32%, 91%);
+  --input: hsl(214, 32%, 91%);
+  --ring: hsl(142, 76%, 36%);
+  --chart-1: hsl(142, 76%, 36%);
+  --chart-2: hsl(159, 100%, 36%);
+  --chart-3: hsl(42, 92%, 56%);
+  --chart-4: hsl(147, 78%, 42%);
+  --chart-5: hsl(341, 75%, 51%);
+  --sidebar: hsl(180, 7%, 97%);
+  --sidebar-foreground: hsl(222, 84%, 5%);
+  --sidebar-primary: hsl(142, 76%, 36%);
+  --sidebar-primary-foreground: hsl(355, 100%, 97%);
+  --sidebar-accent: hsl(158, 64%, 52%);
+  --sidebar-accent-foreground: hsl(355, 100%, 97%);
+  --sidebar-border: hsl(205, 25%, 91%);
+  --sidebar-ring: hsl(142, 76%, 36%);
+  --font-sans: 'Inter', sans-serif;
+  --font-serif: Georgia, serif;
+  --font-mono: 'Fira Code', monospace;
+  --radius: 0.75rem;
+  --shadow-2xs: 0px 1px 2px 0px hsl(142, 76%, 36%, 0.05);
+  --shadow-xs: 0px 1px 2px 0px hsl(142, 76%, 36%, 0.05);
+  --shadow-sm: 0px 1px 3px 0px hsl(142, 76%, 36%, 0.1), 0px 1px 2px -1px hsl(142, 76%, 36%, 0.1);
+  --shadow: 0px 1px 3px 0px hsl(142, 76%, 36%, 0.1), 0px 1px 2px -1px hsl(142, 76%, 36%, 0.1);
+  --shadow-md: 0px 4px 6px -1px hsl(142, 76%, 36%, 0.1), 0px 2px 4px -2px hsl(142, 76%, 36%, 0.1);
+  --shadow-lg: 0px 10px 15px -3px hsl(142, 76%, 36%, 0.1), 0px 4px 6px -4px hsl(142, 76%, 36%, 0.1);
+  --shadow-xl: 0px 20px 25px -5px hsl(142, 76%, 36%, 0.1), 0px 8px 10px -6px hsl(142, 76%, 36%, 0.1);
+  --shadow-2xl: 0px 25px 50px -12px hsl(142, 76%, 36%, 0.25);
+  --tracking-normal: 0em;
+  --spacing: 0.25rem;
+}
+
+.dark {
+  --background: hsl(222, 84%, 5%);
+  --foreground: hsl(210, 40%, 98%);
+  --card: hsl(222, 84%, 5%);
+  --card-foreground: hsl(210, 40%, 98%);
+  --popover: hsl(222, 84%, 5%);
+  --popover-foreground: hsl(210, 40%, 98%);
+  --primary: hsl(142, 76%, 36%);
+  --primary-foreground: hsl(355, 100%, 97%);
+  --secondary: hsl(217, 32%, 17%);
+  --secondary-foreground: hsl(210, 40%, 98%);
+  --muted: hsl(217, 32%, 17%);
+  --muted-foreground: hsl(215, 20%, 65%);
+  --accent: hsl(158, 64%, 52%);
+  --accent-foreground: hsl(355, 100%, 97%);
+  --destructive: hsl(0, 62%, 30%);
+  --destructive-foreground: hsl(210, 40%, 98%);
+  --border: hsl(217, 32%, 17%);
+  --input: hsl(217, 32%, 17%);
+  --ring: hsl(142, 76%, 36%);
+  --chart-1: hsl(142, 76%, 36%);
+  --chart-2: hsl(159, 100%, 36%);
+  --chart-3: hsl(42, 92%, 56%);
+  --chart-4: hsl(147, 78%, 42%);
+  --chart-5: hsl(341, 75%, 51%);
+  --sidebar: hsl(222, 84%, 5%);
+  --sidebar-foreground: hsl(210, 40%, 98%);
+  --sidebar-primary: hsl(142, 76%, 36%);
+  --sidebar-primary-foreground: hsl(355, 100%, 97%);
+  --sidebar-accent: hsl(158, 64%, 52%);
+  --sidebar-accent-foreground: hsl(355, 100%, 97%);
+  --sidebar-border: hsl(217, 32%, 17%);
+  --sidebar-ring: hsl(142, 76%, 36%);
+}
+
+/* Custom gradient utilities */
+.gradient-green {
+  background: linear-gradient(135deg, hsl(142, 76%, 36%) 0%, hsl(158, 64%, 52%) 100%);
+}
+
+.hero-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2322c55e' fill-opacity='0.03'%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* Line clamping utilities */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold;
+  }
+
+  /* Ensure proper contrast for buttons */
+  .btn-primary {
+    background-color: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+  }
+
+  .btn-primary:hover {
+    background-color: hsl(var(--primary) / 0.9);
+  }
+
+  /* Scrollbar styling */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--muted));
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--muted-foreground) / 0.3);
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--muted-foreground) / 0.5);
+  }
+}
+
+@layer components {
+  /* Custom component styles for eco-friendly theme */
+  .eco-card {
+    @apply bg-card border border-border rounded-lg shadow-sm;
+  }
+
+  .eco-badge {
+    @apply inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium;
+  }
+
+  .eco-button {
+    @apply inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors;
+  }
+
+  .eco-input {
+    @apply flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm;
+  }
+}
+
+@layer utilities {
+  /* Additional utility classes */
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .bg-grid-pattern {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='Artboard-5' fill='%23000000' fill-opacity='0.05' fill-rule='nonzero'%3E%3Cpath d='m10 12 4-4 4 4-4 4-4-4zm2-6 4 4 4-4 4 4-4 4 4 4-4 4-4-4-4 4-4-4 4-4-4-4 4-4z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  .shadow-green {
+    box-shadow: 0 4px 6px -1px hsl(142, 76%, 36%, 0.1), 0 2px 4px -1px hsl(142, 76%, 36%, 0.06);
+  }
+}
