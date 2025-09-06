@@ -8,7 +8,9 @@ import memoize from "memoizee";
 import connectPg from "connect-pg-simple";
 import { storage } from "./storage";
 
-if (!process.env.REPLIT_DOMAINS) {
+const isDemo = process.env.DEMO === 'true';
+
+if (!isDemo && !process.env.REPLIT_DOMAINS) {
   throw new Error("Environment variable REPLIT_DOMAINS not provided");
 }
 
@@ -32,7 +34,7 @@ export function getSession() {
     tableName: "sessions",
   });
   return session({
-    secret: process.env.SESSION_SECRET!,
+    secret: process.env.SESSION_SECRET || "demo-secret",
     store: sessionStore,
     resave: false,
     saveUninitialized: false,
@@ -67,6 +69,16 @@ async function upsertUser(
 }
 
 export async function setupAuth(app: Express) {
+  if (isDemo) {
+    // DEMO: no OAuth. Attach a mock user and mark as authenticated.
+    app.use((req: any, _res, next) => {
+      req.user = { claims: { sub: "demo-user-123", email: "demo@example.com" }, expires_at: Math.floor(Date.now()/1000)+3600 };
+      req.isAuthenticated = () => true;
+      next();
+    });
+    return;
+  }
+
   app.set("trust proxy", 1);
   app.use(getSession());
   app.use(passport.initialize());
@@ -84,8 +96,7 @@ export async function setupAuth(app: Express) {
     verified(null, user);
   };
 
-  for (const domain of process.env
-    .REPLIT_DOMAINS!.split(",")) {
+  for (const domain of process.env.REPLIT_DOMAINS!.split(",")) {
     const strategy = new Strategy(
       {
         name: `replitauth:${domain}`,
@@ -127,7 +138,11 @@ export async function setupAuth(app: Express) {
   });
 }
 
-export const isAuthenticated: RequestHandler = async (req, res, next) => {
+export const isAuthenticated: RequestHandler = async (req: any, res, next) => {
+  if (isDemo) {
+    return next();
+  }
+
   const user = req.user as any;
 
   if (!req.isAuthenticated() || !user.expires_at) {
