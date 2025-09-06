@@ -1,0 +1,57 @@
+Project Description – EcoFind: Sustainable Student Marketplace
+
+EcoFind is a web-based platform designed exclusively for students to promote sustainability, affordability, and collaboration within educational communities. The platform enables students to buy, sell, exchange, or donate products such as books, stationery, electronics, furniture, clothing, and other essentials. In addition to the product marketplace, EcoFind also features a service exchange system, where students can offer or request services like tutoring, assignment/project assistance, event support, design, and technical help.
+
+The core idea behind EcoFind is to build a student-centered circular economy where resources are reused instead of wasted and skills are shared among peers. By creating a verified, student-only ecosystem, EcoFind ensures safety, trust, and accessibility.
+
+What We Are Building
+
+Student-Verified Marketplace
+
+A platform where only verified students (via college email/ID) can access the system.
+
+Students can post listings with product details, images, and pricing.
+
+Product Exchange & Donations
+
+Options to buy, sell, exchange, or donate items.
+
+Search and filter system for easy discovery.
+
+Services Section
+
+Students can post services they offer (e.g., tutoring, project help, design, event support).
+
+Other students can request or book services.
+
+Chat & Negotiation System
+
+Direct messaging between buyers, sellers, and service providers.
+
+Secure Transactions
+
+Wallet/payment integration for safe and smooth payments.
+
+EcoPoints & Sustainability Tracker
+
+Students earn EcoPoints for donating/exchanging instead of discarding items.
+
+Dashboard showing sustainability impact (e.g., waste reduced, CO₂ saved).
+
+User Profiles & Reviews
+
+Each student has a profile with their listings, services, ratings, and transaction history.
+
+Rating and review system to ensure trust.
+
+Admin Panel
+
+Admins verify users, moderate listings, and monitor system activity.
+
+Why This Project Matters
+
+For Students: Affordable access to resources, opportunities to earn extra income, and a space to collaborate.
+
+For Campuses: Promotes sustainability, reduces waste, and encourages peer-to-peer sharing.
+
+For the Environment: Extends product lifecycles, reduces landfill waste, and builds eco-conscious habits.
