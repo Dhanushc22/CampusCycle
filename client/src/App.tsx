@@ -14,22 +14,15 @@ import Messages from "@/pages/messages";
 import Dashboard from "@/pages/dashboard";
 
 function Router() {
-  const { isAuthenticated, isLoading } = useAuth();
-
   return (
     <Switch>
-      {isLoading || !isAuthenticated ? (
-        <Route path="/" component={Landing} />
-      ) : (
-        <>
-          <Route path="/" component={Home} />
-          <Route path="/marketplace" component={Marketplace} />
-          <Route path="/services" component={Services} />
-          <Route path="/add-listing" component={AddListing} />
-          <Route path="/messages" component={Messages} />
-          <Route path="/dashboard" component={Dashboard} />
-        </>
-      )}
+      <Route path="/" component={Home} />
+      <Route path="/marketplace" component={Marketplace} />
+      <Route path="/services" component={Services} />
+      <Route path="/add-listing" component={AddListing} />
+      <Route path="/messages" component={Messages} />
+      <Route path="/dashboard" component={Dashboard} />
+      <Route path="/landing" component={Landing} />
       <Route component={NotFound} />
     </Switch>
   );

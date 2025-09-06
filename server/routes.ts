@@ -27,7 +27,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  // Product routes
+  // Product routes (no auth required)
   app.get('/api/products', async (req, res) => {
     try {
       const { category, condition, type, search } = req.query;
@@ -57,9 +57,9 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  app.post('/api/products', isAuthenticated, async (req: any, res) => {
+  app.post('/api/products', async (req: any, res) => {
     try {
-      const userId = req.user.claims.sub;
+      const userId = "demo-user-123"; // Mock user ID
       const productData = insertProductSchema.parse({
         ...req.body,
         sellerId: userId,
@@ -107,7 +107,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  // Service routes
+  // Service routes (no auth required)
   app.get('/api/services', async (req, res) => {
     try {
       const { category, search } = req.query;
@@ -122,9 +122,9 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  app.post('/api/services', isAuthenticated, async (req: any, res) => {
+  app.post('/api/services', async (req: any, res) => {
     try {
-      const userId = req.user.claims.sub;
+      const userId = "demo-user-123"; // Mock user ID
       const serviceData = insertServiceSchema.parse({
         ...req.body,
         providerId: userId,

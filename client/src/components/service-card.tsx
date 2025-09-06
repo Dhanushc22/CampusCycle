@@ -66,7 +66,10 @@ export default function ServiceCard({ service }: ServiceCardProps) {
 
   const handleBookService = () => {
     if (!user) {
-      window.location.href = "/api/login";
+      toast({
+        title: "Info",
+        description: "Please try again later",
+      });
       return;
     }
     

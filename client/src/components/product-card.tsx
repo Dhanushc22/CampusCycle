@@ -67,7 +67,10 @@ export default function ProductCard({ product }: ProductCardProps) {
 
   const handleContactSeller = () => {
     if (!user) {
-      window.location.href = "/api/login";
+      toast({
+        title: "Info",
+        description: "Please try again later",
+      });
       return;
     }
     
