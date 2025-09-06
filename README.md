@@ -57,29 +57,17 @@ EcoFindMarket connects students and campus communities, making it easy to discov
 
 ---
 
-## Contributing
-We welcome contributions from students and developers passionate about sustainability!
 
-1. Fork the repository
-2. Create a new branch (`git checkout -b feature/your-feature`)
-3. Commit your changes (`git commit -m "Add new feature"`)
-4. Push to your branch (`git push origin feature/your-feature`)
-5. Open a pull request
 
 Please review our [contribution guidelines](CONTRIBUTING.md) before submitting.
 
 ---
 
-## License
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 ---
 
 ##  Contact & Support
 - **Project Lead:** Dhanush C
-- **GitHub Issues:** [Report bugs or request features](https://github.com/Dhanushc22/CampusCycle/issues)
-- **Email:** [your-email@example.com](mailto:your-email@example.com)
+- **Email:** [your-email@example.com](dhanushc092@gmail.com)
 
 ---
-
-Thank you for supporting sustainable student communities!
