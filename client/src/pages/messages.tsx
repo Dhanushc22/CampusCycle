@@ -36,7 +36,7 @@ export default function Messages() {
           <p className="text-muted-foreground">Chat with other students about products and services</p>
         </div>
 
-        {conversations.length === 0 ? (
+        {(conversations as any[]).length === 0 ? (
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center" data-testid="title-no-conversations">

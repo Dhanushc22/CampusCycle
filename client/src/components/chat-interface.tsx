@@ -214,13 +214,13 @@ export default function ChatInterface({ conversations, currentUserId }: ChatInte
                   <div className="flex justify-center items-center h-32">
                     <div className="animate-pulse">Loading messages...</div>
                   </div>
-                ) : messages.length === 0 ? (
+                ) : (messages as any[]).length === 0 ? (
                   <div className="flex justify-center items-center h-32 text-muted-foreground">
                     No messages yet. Start the conversation!
                   </div>
                 ) : (
                   <div className="space-y-4">
-                    {messages.map((message: Message) => (
+                    {(messages as any[]).map((message: Message) => (
                       <div
                         key={message.id}
                         className={`flex ${
