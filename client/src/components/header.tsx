@@ -10,15 +10,12 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Link, useLocation } from "wouter";
-import { Recycle, Bell, MessageCircle, Leaf, User, LogOut, Settings } from "lucide-react";
+import { Recycle, Bell, MessageCircle, Leaf, User, Settings } from "lucide-react";
 
 export default function Header() {
   const { user } = useAuth();
   const [location] = useLocation();
 
-  const handleLogout = () => {
-    window.location.href = "/api/logout";
-  };
 
   const navigationItems = [
     { href: "/", label: "Home", current: location === "/" },
@@ -61,7 +58,7 @@ export default function Header() {
             <div className="hidden md:flex items-center bg-muted rounded-lg px-3 py-2">
               <Leaf className="text-accent mr-2 w-4 h-4" />
               <span className="text-sm font-medium text-muted-foreground" data-testid="text-ecopoints">
-                {user?.ecoPoints?.toLocaleString() || "0"} EcoPoints
+                {user?.ecoPoints ? user.ecoPoints.toLocaleString() : "0"} EcoPoints
               </span>
             </div>
 
@@ -117,12 +114,11 @@ export default function Header() {
                 </DropdownMenuItem>
                 <DropdownMenuSeparator />
                 <DropdownMenuItem 
-                  onClick={handleLogout}
-                  className="flex items-center text-destructive focus:text-destructive cursor-pointer"
-                  data-testid="button-logout"
+                  className="flex items-center cursor-pointer"
+                  data-testid="button-demo-mode"
                 >
-                  <LogOut className="w-4 h-4 mr-2" />
-                  Log out
+                  <Settings className="w-4 h-4 mr-2" />
+                  Demo Mode
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>

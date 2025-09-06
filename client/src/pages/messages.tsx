@@ -51,7 +51,7 @@ export default function Messages() {
             </CardContent>
           </Card>
         ) : (
-          <ChatInterface conversations={conversations} currentUserId={user?.id} />
+          <ChatInterface conversations={conversations as any} currentUserId={user?.id} />
         )}
       </div>
     </div>
