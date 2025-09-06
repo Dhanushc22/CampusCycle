@@ -126,14 +126,8 @@ export class DatabaseStorage implements IStorage {
     type?: string;
     search?: string;
   }): Promise<Product[]> {
-    let query = db
-      .select()
-      .from(products)
-      .where(eq(products.isActive, true))
-      .orderBy(desc(products.createdAt));
-
-    if (filters) {
-      const conditions = [];
+    if (filters && Object.values(filters).some(v => v)) {
+      const conditions = [eq(products.isActive, true)];
       
       if (filters.category) {
         conditions.push(eq(products.category, filters.category));
@@ -156,12 +150,18 @@ export class DatabaseStorage implements IStorage {
         );
       }
 
-      if (conditions.length > 0) {
-        query = query.where(and(...conditions));
-      }
+      return await db
+        .select()
+        .from(products)
+        .where(and(...conditions))
+        .orderBy(desc(products.createdAt));
     }
 
-    return await query;
+    return await db
+      .select()
+      .from(products)
+      .where(eq(products.isActive, true))
+      .orderBy(desc(products.createdAt));
   }
 
   async getProduct(id: string): Promise<Product | undefined> {
@@ -209,14 +209,8 @@ export class DatabaseStorage implements IStorage {
     category?: string;
     search?: string;
   }): Promise<Service[]> {
-    let query = db
-      .select()
-      .from(services)
-      .where(eq(services.isActive, true))
-      .orderBy(desc(services.createdAt));
-
-    if (filters) {
-      const conditions = [];
+    if (filters && Object.values(filters).some(v => v)) {
+      const conditions = [eq(services.isActive, true)];
       
       if (filters.category) {
         conditions.push(eq(services.category, filters.category));
@@ -231,12 +225,18 @@ export class DatabaseStorage implements IStorage {
         );
       }
 
-      if (conditions.length > 0) {
-        query = query.where(and(...conditions));
-      }
+      return await db
+        .select()
+        .from(services)
+        .where(and(...conditions))
+        .orderBy(desc(services.createdAt));
     }
 
-    return await query;
+    return await db
+      .select()
+      .from(services)
+      .where(eq(services.isActive, true))
+      .orderBy(desc(services.createdAt));
   }
 
   async getService(id: string): Promise<Service | undefined> {
