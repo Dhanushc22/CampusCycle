@@ -5,12 +5,12 @@
 
 ---
 
-## 🌱 Project Overview
+## Project Overview
 EcoFindMarket connects students and campus communities, making it easy to discover, list, and trade sustainable goods and services. The platform encourages responsible consumption and supports local student entrepreneurs.
 
 ---
 
-## 🚀 Features
+## Features
 - **Marketplace:** Browse, list, and manage eco-friendly products and services.
 - **Chat Interface:** Secure, real-time messaging between buyers and sellers.
 - **Dashboard:** Personalized dashboard for managing listings, messages, and transactions.
@@ -21,7 +21,7 @@ EcoFindMarket connects students and campus communities, making it easy to discov
 
 ---
 
-## 🛠️ Tech Stack
+##  Tech Stack
 - **Frontend:** React, TypeScript, Vite, Tailwind CSS
 - **Backend:** Node.js, Express
 - **Database:** Drizzle ORM, SQLite/PostgreSQL
@@ -30,7 +30,7 @@ EcoFindMarket connects students and campus communities, making it easy to discov
 
 ---
 
-## 📦 Installation & Setup
+## Installation & Setup
 1. **Clone the repository:**
    ```powershell
    git clone https://github.com/Dhanushc22/CampusCycle.git
@@ -49,7 +49,7 @@ EcoFindMarket connects students and campus communities, making it easy to discov
 
 ---
 
-## 🧑‍💻 Usage
+## Usage
 - Access the platform at `http://localhost:5173` (default Vite port).
 - Register or log in with your campus credentials.
 - Browse the marketplace, add listings, and chat with other users.
@@ -57,7 +57,7 @@ EcoFindMarket connects students and campus communities, making it easy to discov
 
 ---
 
-## 🤝 Contributing
+## Contributing
 We welcome contributions from students and developers passionate about sustainability!
 
 1. Fork the repository
@@ -70,12 +70,12 @@ Please review our [contribution guidelines](CONTRIBUTING.md) before submitting.
 
 ---
 
-## 📄 License
+## License
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 ---
 
-## 📬 Contact & Support
+##  Contact & Support
 - **Project Lead:** Dhanush C
 - **GitHub Issues:** [Report bugs or request features](https://github.com/Dhanushc22/CampusCycle/issues)
 - **Email:** [your-email@example.com](mailto:your-email@example.com)
